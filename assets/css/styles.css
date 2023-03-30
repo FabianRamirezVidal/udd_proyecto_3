@@ -7,18 +7,28 @@
 body{
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     background: rgb(2,0,36);
     font-size: 2rem;
     font-family: sans-serif;
-    color: antiquewhite;    
+    color: antiquewhite;
+    gap: 20px;    
 }
 
 .container {
     height: 20rem;
     width: 15rem;
+    background-color: grey;
+    text-align: center;
+    padding-top: 12px;
+    border-radius: 16px;
+    border: 2px solid (14,43,1);
+}
+.container_2 {
+    height: 20rem;
+    width: 50rem;
     background-color: grey;
     text-align: center;
     padding-top: 12px;

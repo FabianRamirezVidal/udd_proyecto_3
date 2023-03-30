@@ -32,8 +32,6 @@ location.textContent = data.name + ","+ data.sys.country;
 let icon_image = `https://openweathermap.org/img/wn/${data.weather[0]["icon"]}@2x.png`;
 icon.innerHTML = "<img width=\"40px\" height=\"40px\">";
 icon.setAttribute ("src",icon_image) 
-
     });
   });
-
 });
