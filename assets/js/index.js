@@ -72,6 +72,7 @@ window.addEventListener("load",()=> {
     type: 'line',
     mantainAspectRatio: false,
     responsive: true,
+    resizeDelay: 0,
     data: {
       labels: labels,
       datasets: [{
@@ -88,9 +89,7 @@ window.addEventListener("load",()=> {
       }
     }
   });
-    
-    
-    //let labels = dataFore.map(function(dtTxt){})
+
     
   }
 
