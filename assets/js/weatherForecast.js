@@ -14,11 +14,15 @@ function getWeatherForecast() {
                 })
                 .then((dataFore) => {
                     const data1 = dataFore.list;
+                    console.log(data1)
                     let labels = data1.map(function (element) {
                         return element.dt_txt;
                     });
                     let temps = data1.map(function (element) {
                         return Math.floor(element.main.temp - kelvin);
+                    });
+                    let hums = data1.map(function (element) {
+                        return Math.floor(element.main.humidity);
                     });
 
                     const ctx = document.getElementById('myChart');
@@ -33,13 +37,34 @@ function getWeatherForecast() {
                             datasets: [{
                                 label: 'Temperatura en ºC',
                                 data: temps,
-                                borderWidth: 1
+                                yAxisID:"y",
+                                borderWidth: 1},{
+                                label: 'Humedad en %',
+                                data: hums,
+                                yAxisID:"percentage"
                             }]
                         },
                         options: {
                             scales: {
                                 y: {
-                                    beginAtZero: true
+                                    beginAtZero: true,
+                                    type: "linear",
+                                    position: "left",
+                                    ticks: {
+                                        callback: function(value, index, values) {
+                                            return `${value} ºC`
+                                        },
+                                    }
+                                },
+                                percentage: {
+                                    beginAtZero: false,
+                                    type: "linear",
+                                    position: "right",
+                                    ticks: {
+                                        callback: function(value, index, values) {
+                                            return `${value} %`
+                                        },
+                                    }
                                 }
                             }
                         }
